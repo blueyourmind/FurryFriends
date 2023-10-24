@@ -7,3 +7,6 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Pet.create(name: "Tiko", species: "Dog", age: 3)
+Pet.create(name: "lolo", species: "Cat", age: 2)
