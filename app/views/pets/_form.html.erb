@@ -1,5 +1,5 @@
-<!-- app/views/pets/_form.html.erb -->
-<%= form_for @pet, html: { multipart: true } do |f| %>
+<%= form_for @pet, url: pets_path, html: { multipart: true } do |f| %>
+
 
   <% if @pet.errors.any? %>
     <div id="error_explanation">
@@ -12,43 +12,85 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
+  <div class="form-field">
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= f.label :species %><br>
+  <div class="form-field">
+    <%= f.label :species %>
     <%= f.text_field :species %>
   </div>
 
-  <div class="field">
-    <%= f.label :breed %><br>
+  <div class="form-field">
+    <%= f.label :breed %>
     <%= f.text_field :breed %>
   </div>
 
-  <div class="field">
-    <%= f.label :age %><br>
+  <div class="form-field">
+    <%= f.label :age %>
     <%= f.number_field :age %>
   </div>
 
-  <div class="field">
-    <%= f.label :story %><br>
+  <div class="form-field">
+    <%= f.label :story %>
     <%= f.text_area :story %>
   </div>
 
-  <div class="field">
-    <%= f.label :found_when %><br>
+  <div class="form-field">
+    <%= f.label :found_when %>
     <%= f.date_field :found_when %>
   </div>
 
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.text_field :status %>
+  <div class="form-field">
+    <%= f.label :photo %>
+    <%= f.:photo %>
   </div>
 
 
-<div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit "Add Pet", class: "btn-primary" %>
   </div>
+
+
 <% end %>
+
+<style>
+  .form-field {
+    margin-bottom: 1px;
+  }
+
+  .form-field label {
+    font-weight: bold;
+  }
+
+  .form-field input[type="text"],
+  .form-field input[type="number"],
+  .form-field textarea {
+    width: 131%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .form-field input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+
+  }
+
+  .form-actions {
+    margin-top: 20px;
+  }
+
+  .btn-primary {
+    background-color: GREEN;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
