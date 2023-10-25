@@ -10,3 +10,4 @@
 
 Pet.create(name: "Tiko", species: "Dog", age: 3)
 Pet.create(name: "lolo", species: "Cat", age: 2)
+

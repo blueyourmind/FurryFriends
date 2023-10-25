@@ -1,19 +1,67 @@
 <!-- app/views/pets/show.html.erb -->
-<h1><%= @pet.name %></h1>
+<style>
+  body {
+    background: url('https://imageio.forbes.com/blogs-images/nomanazish/files/2018/02/dog-2785074_1280-1200x800.jpg?format=jpg&height=900&width=1600&fit=bounds') no-repeat center center fixed;
+    background-size: cover;
+  }
 
-<p><strong>Story:</strong> <%= @pet.story %></p>
-<p><strong>Age:</strong> <%= @pet.age %> years</p>
-<p><strong>Breed:</strong> <%= @pet.breed %></p>
+  .card-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the card container */
+    padding: 99px;
+  }
 
+  .card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    padding: 20px;
+    max-width: 500px;
+  }
 
-<% if @pet.status == 'available' %>
-  <%= link_to 'Adopt', adopt_pet_path(@pet), method: :put, class: 'btn btn-primary' %>
-<% elsif @pet.status == 'adopted' %>
-  <p>This pet has been adopted.</p>
-  <% if current_user && @pet.adopter_id == current_user.id %>
-    <%= link_to 'Donate', donate_pet_path(@pet), method: :put, class: 'btn btn-success' %>
-  <% end %>
-<% end %>
+  .card h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
 
-<%= link_to 'Back', pets_path %>
-<%= link_to 'Delete', pet_path(@pet), 'data-turbo-method': :delete, data: { confirm: 'Are you sure you want to delete this pet?' }, class: 'btn btn-danger' %>
+  .card-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+  }
+
+  .card p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+</style>
+
+<div class="card-container">
+  <div class="card">
+    <h1><%= @pet.name %></h1>
+    <%# <%= cl_image_tag @pet.image_url, class: 'card-image' %> 
+    <p><strong>Age:</strong> <%= @pet.age %> years</p>
+    <p><strong>Breed:</strong> <%= @pet.breed %></p>
+    <p><strong>Found When:</strong> <%= @pet.found_when %></p>
+    <p><strong>Story:</strong> <%= @pet.story %></p>
+    <p><strong>Location:</strong> <%= @pet.location %></p>
+
+    <% if @pet.status == 'available' %>
+      <%= link_to 'Adopt', adopt_pet_path(@pet), method: :put, class: 'btn btn-primary' %>
+    <% elsif @pet.status == 'adopted' %>
+      <p>This pet has been adopted.</p>
+      <% if current_user && @pet.adopter_id == current_user.id %>
+        <%= link_to 'Donate', donate_pet_path(@pet), method: :put, class: 'btn btn-success' %>
+      <% end %>
+    <% end %>
+
+    <%= link_to 'Back', pets_path, class: 'btn btn-secondary'%>
+    <%= link_to 'Delete', pet_path(@pet), 'data-turbo-method': :delete, data: { confirm: 'Are you sure you want to delete this pet?' }, class: 'btn btn-danger' %>
+  </div>
+</div>
