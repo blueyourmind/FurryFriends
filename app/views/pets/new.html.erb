@@ -1,6 +1,44 @@
+<!DOCTYPE html>
+<html>
 
-<h1>New Pet</h1>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+  <style>
+    .container {
+      float: right;
+      margin-right: 9%;
+      width: 23%;
 
-<%= render 'form' %>
 
-<%= link_to 'Back', pets_path %>
+    }
+
+    h1 {
+      text-align: center;
+      padding-right: 54%;
+      margin:2%;
+      font-family: 'Aclonica', sans-serif;
+      font-size: 54px;
+      color:white;
+    }
+    h3 {  text-align: center;
+      padding-right: 5%;
+      margin:28%;
+      font-family: 'Aclonica', sans-serif;
+      font-size: 45px;
+      color:white;
+      }
+  </style>
+</head>
+
+<body>
+  <h1> Add your Pet</h1>
+  <div class="container">
+    <%= render 'form' %>
+  </div>
+
+<h3> "Open your heart, change a life, adopt a friend." </h3>
+</body>
+
+</html>
