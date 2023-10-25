@@ -57,7 +57,6 @@ class PetsController < ApplicationController
   end
 
 
-
   def adopt
     @pet = Pet.find(params[:id])
     if @pet.status == 'available'
