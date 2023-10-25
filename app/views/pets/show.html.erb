@@ -10,7 +10,7 @@
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.8); 
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the card container */
     padding: 99px;
   }
 
@@ -45,7 +45,7 @@
 <div class="card-container">
   <div class="card">
     <h1><%= @pet.name %></h1>
-    <%= cl_image_tag @pet.image_url, class: 'card-image' %>
+    <%# <%= cl_image_tag @pet.image_url, class: 'card-image' %> 
     <p><strong>Age:</strong> <%= @pet.age %> years</p>
     <p><strong>Breed:</strong> <%= @pet.breed %></p>
     <p><strong>Found When:</strong> <%= @pet.found_when %></p>
