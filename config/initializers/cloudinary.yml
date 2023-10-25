@@ -1,0 +1,6 @@
+  development:
+  cloud_name: "djgzfoigq"
+  api_key: "876272938818541"
+  api_secret: "***************************"
+  secure: true
+  cdn_subdomain: true
