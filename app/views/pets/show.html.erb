@@ -1,56 +1,16 @@
-<!-- app/views/pets/show.html.erb -->
-<style>
-  body {
-    background: url('https://imageio.forbes.com/blogs-images/nomanazish/files/2018/02/dog-2785074_1280-1200x800.jpg?format=jpg&height=900&width=1600&fit=bounds') no-repeat center center fixed;
-    background-size: cover;
-  }
-
-  .card-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the card container */
-    padding: 99px;
-  }
-
-  .card {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background: #fff;
-    padding: 20px;
-    max-width: 500px;
-  }
-
-  .card h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-
-  .card-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-  }
-
-  .card p {
-    margin: 10px 0;
-    font-size: 16px;
-  }
-</style>
-
 <div class="card-container">
-  <div class="card">
+  <div class="card-container">
     <h1><%= @pet.name %></h1>
-    <%# <%= cl_image_tag @pet.image_url, class: 'card-image' %> 
     <p><strong>Age:</strong> <%= @pet.age %> years</p>
     <p><strong>Breed:</strong> <%= @pet.breed %></p>
     <p><strong>Found When:</strong> <%= @pet.found_when %></p>
     <p><strong>Story:</strong> <%= @pet.story %></p>
-    <p><strong>Location:</strong> <%= @pet.location %></p>
+    <p><strong>Species:</strong> <%= @pet.species %></p>
+    <p><strong>Status:</strong> <%= @pet.status %></p>
+    <%= cl_image_tag @pet.photo.key, height: 200 %>
+  </div>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ7IRxfzG3sSqg63L3vn7Y1-JYc5Y18ZW1vmyHJKxGTsuo4-Qz" alt="Chelsea dog" class="image">
+</div>
 
     <% if @pet.status == 'available' %>
       <%= link_to 'Adopt', adopt_pet_path(@pet), method: :put, class: 'btn btn-primary' %>
