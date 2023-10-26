@@ -1,2 +1,8 @@
-
-<%# <a class="image-container" href="https://ibb.co/cgGH11k"><img src="https://i.ibb.co/dWdqrrj/Full-Logo-Transparent.png" ></a> %>
+<div class="flex-container">
+<% @pets.each do |pet| %>
+  <div class="pet">
+    <h2><%= pet.name %></h2>
+    <%= cl_image_tag pet.photo.key, height: 200 %>
+  </div>
+<% end %>
+</div>
