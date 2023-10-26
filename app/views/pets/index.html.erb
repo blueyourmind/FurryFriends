@@ -6,7 +6,7 @@
    <% @pets.each do |pet| %>
   <div class="pet">
     <h2><%= pet.name %></h2>
-    <%= cl_image_tag pet.photo.key, height: 200 %>
+    <%# <%= cl_image_tag pet.photo.key, height: 200 %> 
   </div>
 <% end %>
   </ul>
