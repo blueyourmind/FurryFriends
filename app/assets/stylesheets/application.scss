@@ -1,4 +1,3 @@
-// Graphical variables
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
@@ -8,10 +7,9 @@
 @import "font-awesome";
 
 // Your CSS partials
-@import "components/index";
-@import "pages/index";
-@import "pages/home";
-
-/* Add this to your application.css or pets.css.scss */
-
-
+@import "pets/index";
+@import "pets/new";
+@import "pets/show";
+@import "pets/navbar";
+@import "pets/form";
+@import "pets/home";

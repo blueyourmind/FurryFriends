@@ -1,0 +1,40 @@
+legend ~ div.form-check:first-of-type {
+  clear: left;
+}
+.form-field {
+  margin-bottom: 1px;
+}
+
+.form-field label {
+  font-weight: bold;
+}
+
+.form-field input[type="text"],
+.form-field input[type="number"],
+.form-field textarea {
+  width: 131%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-field input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+
+}
+
+.form-actions {
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background-color: GREEN;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
