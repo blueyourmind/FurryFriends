@@ -42,6 +42,7 @@ class PetsController < ApplicationController
     redirect_to pets_path, notice: 'Pet was successfully destroyed.'
   end
 
+
   def adopt
 
     if @pet.status == 'available'
