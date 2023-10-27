@@ -7,9 +7,7 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 400px;
-}
+
 .navbar {
   background-image: url('https://img.freepik.com/premium-photo/large-group-cats-dogs-looking-camera-isolated-white_191971-28632.jpg?w=2000');
   background-size: 810px;
@@ -23,11 +21,11 @@
 
 .nav-link{
   padding: 10px 20px;
-  margin: 5px; /* Add margin for separation */
+  margin: 2px;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
-  color: white;
+  // cursor: pointer;
+  color: rgb(255, 255, 255);
   background-color: green;
   transition: background-color 0.3s;
   text-decoration: none;

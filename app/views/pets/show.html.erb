@@ -7,9 +7,8 @@
     <p><strong>Story:</strong> <%= @pet.story %></p>
     <p><strong>Species:</strong> <%= @pet.species %></p>
     <p><strong>Status:</strong> <%= @pet.status %></p>
-    <%= cl_image_tag @pet.photo.key, height: 200 %>
+    <%=  cl_image_tag @pet.photo.key, height: 200 %>
   </div>
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ7IRxfzG3sSqg63L3vn7Y1-JYc5Y18ZW1vmyHJKxGTsuo4-Qz" alt="Chelsea dog" class="image">
 </div>
 
     <% if @pet.status == 'available' %>

@@ -1,17 +1,14 @@
+<h1>All Pets</h1>
+<div class="flex-container">
+  <% @pets.each do |pet| %>
+    <div class="pet">
+      <h2><%= link_to pet.name, pet %></h2>
+      <%= cl_image_tag pet.photo.key, height: 200 %>
+    </div>
+  <% end %>
+</div>
 
-  <h1>All Pets</h1>
-
-  <ul>
-    <!-- Your Ruby code to iterate through @pets and create list items -->
-   <% @pets.each do |pet| %>
-  <div class="pet">
-    <h2><%= pet.name %></h2>
-    <%= cl_image_tag pet.photo.key, height: 200 %>
-  </div>
-<% end %>
-  </ul>
-
-  <div class="nav-links">
-    <%= link_to 'Home', root_path, class: 'nav-button' %>
-    <%= link_to 'Add Pet', new_pet_path, class: 'nav-button' %>
-  </div>
+<div class="nav-links">
+  <%= link_to 'Home', root_path, class: 'nav-button' %>
+  <%= link_to 'Add Pet', new_pet_path, class: 'nav-button' %>
+</div>
