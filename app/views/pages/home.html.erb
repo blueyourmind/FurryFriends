@@ -1,8 +1,9 @@
 <div class="flex-container">
-<% @pets.each do |pet| %>
-  <div class="pet">
-    <h2><%= pet.name %></h2>
-    <%= cl_image_tag pet.photo.key, height: 200 %>
-  </div>
-<% end %>
+ <% @pets.each do |pet| %>
+    <div class="pet">
+      <h2><%= link_to pet.name, pet %></h2>
+      <%= cl_image_tag pet.photo.key, height: 200 %>
+    </div>
+  <% end %>
+
 </div>
