@@ -11,11 +11,17 @@
 </head>
 <body>
 
-   <div class="table-container">
-     <h1> All our friends   </h1>
+  <div class="para-container">
+     <p class='welcome-msg'>Get your family a new member.</p>
+     <p>Open your doors and hearts to pets in need of a home and it will be thankful to you for the rest of their lives.</p>
+  </div>
 
+<<<<<<< HEAD
  <body>
 <div class="table-container">
+=======
+  <div class="table-container">
+>>>>>>> e7e43cacbdb0d6f8a8228744a1977570754b4cc3
   <% @pets.each do |pet| %>
     <div class="pet-card">
       <h2><%= pet.name %></h2>
@@ -24,9 +30,20 @@
       <% end %>
       <p><strong>Breed:</strong> <%= pet.breed %></p>
       <p><strong>Age:</strong> <%= pet.age %> years</p>
+<<<<<<< HEAD
     </div>
   <% end %>
 </div>
 
+=======
+
+      <% if user_signed_in? %>
+        <%= link_to "Adopt me !", pet_path(pet), class: "adopt-button" %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class: "adopt-button" %>
+      <% end %>
+  <% end %>
+  </div>
+>>>>>>> e7e43cacbdb0d6f8a8228744a1977570754b4cc3
 </body>
 </html>
