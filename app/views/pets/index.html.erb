@@ -1,14 +1,12 @@
-<h1>All Pets</h1>
-<div class="flex-container">
+<div class="table-container">
   <% @pets.each do |pet| %>
-    <div class="pet">
-      <h2><%= link_to pet.name, pet %></h2>
-      <%= cl_image_tag pet.photo.key, height: 200 %>
+    <div class="pet-card">
+      <h2><%= pet.name %></h2>
+      <%= link_to pet_path(pet) do %>
+        <%= cl_image_tag pet.photo.key, height: 270 %>
+      <% end %>
+      <p><strong>Breed:</strong> <%= pet.breed %></p>
+      <p><strong>Age:</strong> <%= pet.age %> years</p>
     </div>
   <% end %>
-</div>
-
-<div class="nav-links">
-  <%= link_to 'Home', root_path, class: 'nav-button' %>
-  <%= link_to 'Add Pet', new_pet_path, class: 'nav-button' %>
 </div>

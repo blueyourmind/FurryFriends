@@ -1,59 +1,68 @@
-<%= form_for @pet, url: pets_path, html: { multipart: true } do |f| %>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="centered-form">
+    <h2>Add a Pet</h2>
+    <%= form_for @pet, url: pets_path, html: { multipart: true } do |f| %>
+      <% if @pet.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
+          <ul>
+            <% @pet.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
+      <div class="form-field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
 
-  <% if @pet.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
-      <ul>
-        <% @pet.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+      <div class="form-field">
+        <%= f.label :species %>
+        <%= f.text_field :species %>
+      </div>
 
-  <div class="form-field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+      <div class="form-field">
+        <%= f.label :breed %>
+        <%= f.text_field :breed %>
+      </div>
+
+      <div class="form-field">
+        <%= f.label :age %>
+        <%= f.number_field :age %>
+      </div>
+
+      <div class="form-field">
+        <%= f.label :story %>
+        <%= f.text_area :story %>
+      </div>
+
+      <div class="form-field">
+        <%= f.label :found_when %>
+        <%= f.date_field :found_when %>
+      </div>
+
+      <div class="form-field">
+        <%= f.label :status %>
+        <%= f.text_field :status %>
+      </div>
+
+      <div class="form-field">
+        <%= f.label :photo %>
+        <%= f.file_field :photo %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.submit "Add Pet", class: "btn-primary" %>
+        
+      </div>
+    <% end %>
   </div>
-
-  <div class="form-field">
-    <%= f.label :species %>
-    <%= f.text_field :species %>
-  </div>
-
-  <div class="form-field">
-    <%= f.label :breed %>
-    <%= f.text_field :breed %>
-  </div>
-
-  <div class="form-field">
-    <%= f.label :age %>
-    <%= f.number_field :age %>
-  </div>
-
-  <div class="form-field">
-    <%= f.label :story %>
-    <%= f.text_area :story %>
-  </div>
-
-  <div class="form-field">
-    <%= f.label :found_when %>
-    <%= f.date_field :found_when %>
-  </div>
-
-  <div class="form-field">
-    <%= f.label :status %>
-    <%= f.text_field :status %>
-  </div>
-
-   <div class="form-field">
-    <%= f.label :photo %>
-    <%= f.file_field :photo %>
-  </div>
-
-<div class="form-actions">
-    <%= f.submit "Add Pet", class: "btn-primary" %>
-  </div>
-
-<% end %>
+</body>
+</html>
