@@ -1,37 +1,52 @@
-legend ~ div.form-check:first-of-type {
-  clear: left;
-}
-.form-field {
-  margin-bottom: 1px;
+.centered-form {
+  width: 27%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 23px 0;
+  font-size: 18px;
+  color: #333;
+  left      : 50%;
+  top       : 63%;
+  position  : absolute;
+  transform : translate(-50%, -50%);
+
 }
 
-.form-field label {
+
+.centered-form h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.centered-form .form-field {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.centered-form label {
   font-weight: bold;
+  display: block;
 }
 
-.form-field input[type="text"],
-.form-field input[type="number"],
-.form-field textarea {
-  width: 131%;
+.centered-form input[type="text"],
+.centered-form input[type="number"],
+.centered-form textarea,
+.centered-form input[type="date"],
+.centered-form input[type="file"] {
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.form-field input[type="date"] {
-  width: 100%;
-  padding: 8px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-
-}
-
-.form-actions {
+.centered-form .form-actions {
   margin-top: 20px;
 }
 
 .btn-primary {
-  background-color: GREEN;
+  background-color: green;
   color: #fff;
   border: none;
   padding: 10px 20px;

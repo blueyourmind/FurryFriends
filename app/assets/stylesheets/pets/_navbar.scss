@@ -1,16 +1,18 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgb(255, 255, 255);
+  background: rgba(0, 0, 0, 0.066);
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-
+.navbar-lewagon .navbar-brand img {
+  width: 400px;
+}
 .navbar {
-  background-image: url('https://img.freepik.com/premium-photo/large-group-cats-dogs-looking-camera-isolated-white_191971-28632.jpg?w=2000');
-  background-size: 810px;
+  background-image: url("https://i.ibb.co/1Lf5Xsb/Full-Logo-Transparent.png") ;
+  background-size: 320px;
   background-repeat: no-repeat;
   background-position: center;
   height: 180px;
@@ -21,11 +23,11 @@
 
 .nav-link{
   padding: 10px 20px;
-  margin: 2px;
+  margin: 11px;
   border: none;
   border-radius: 5px;
-  // cursor: pointer;
-  color: rgb(255, 255, 255);
+  cursor: pointer;
+  color: white;
   background-color: green;
   transition: background-color 0.3s;
   text-decoration: none;
