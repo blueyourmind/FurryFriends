@@ -11,10 +11,12 @@
 </head>
 <body>
 
-   <div class="table-container">
-     <h1> All our friends   </h1>
+  <div class="para-container">
+     <p class='welcome-msg'>Get your family a new member.</p>
+     <p>Open your doors and hearts to pets in need of a home and it will be thankful to you for the rest of their lives.</p>
+  </div>
 
- <body>
+  <div class="table-container">
   <% @pets.each do |pet| %>
     <div class="pet-card">
       <h2><%= pet.name %></h2>
@@ -27,8 +29,7 @@
       <% else %>
         <%= link_to "Login", new_user_session_path, class: "adopt-button" %>
       <% end %>
-
-    </div>
   <% end %>
+  </div>
 </body>
 </html>
