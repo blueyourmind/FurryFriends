@@ -45,12 +45,8 @@ class PetsController < ApplicationController
 
   def adopt
 
-    if @pet.status == 'available'
       @pet.update(adopter_id: current_user.id, status: 'adopted')
       redirect_to @pet, notice: 'You have successfully adopted this pet.'
-    else
-      redirect_to @pet, alert: 'This pet is not available for adoption.'
-    end
   end
 
   def donate
