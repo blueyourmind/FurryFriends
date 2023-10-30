@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  
-
   <div class="table-container">
   <% @pets.each do |pet| %>
     <div class="pet-card">
@@ -22,13 +18,10 @@
     <%= cl_image_tag pet.photo.key, height: 270 %>
   <% end %>
 <% else %>
-  <!-- Display a placeholder image or text if no photo is attached -->
   <div class="placeholder-image">No Photo Available</div>
 <% end %>
-
 <p><strong>Breed:</strong> <%= pet.breed %></p>
 <p><strong>Age:</strong> <%= pet.age %> years</p>
-
       <% if user_signed_in? %>
         <%= link_to "Adopt", pets_path(pet), class: "adopt-button" %>
       <% else %>
