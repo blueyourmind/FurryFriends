@@ -50,6 +50,14 @@ class PetsController < ApplicationController
 
 
   def adopt
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+    if @pet.status == 'available'
+>>>>>>> 00f5201e9a0a93abe027854710238a44f3e81467
+>>>>>>> master
       @pet.update(adopter_id: current_user.id, status: 'adopted')
       redirect_to @pet, notice: 'You have successfully adopted this pet.'
   end
