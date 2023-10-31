@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="table-container">
-  <% @pets.each do |pet| %>
-    <div class="pet-card">
-     <h2><%= pet.name %></h2>
-<% if pet.photo.attached? %>
-  <%= link_to pet_path(pet) do %>
-    <%= cl_image_tag pet.photo.key, height: 270 %>
-  <% end %>
-<% else %>
-  <div class="placeholder-image">No Photo Available</div>
-<% end %>
-<p><strong>Breed:</strong> <%= pet.breed %></p>
-<p><strong>Age:</strong> <%= pet.age %> years</p>
-      <% if user_signed_in? %>
-        <%= link_to "Adopt", pets_path(pet), class: "adopt-button" %>
-      <% else %>
-        <%= link_to "Adopt", new_user_session_path, class: "adopt-button" %>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+    <div class="para-container">
+      <p class='welcome-msg'>Get your family a new member.</p>
+      <p>Open your doors and hearts to pets in need of a home and it will be thankful to you for the rest of their lives.</p>
+    </div>
+
+    <div class="table-container">
+      <% @pets.each do |pet| %>
+        <div class="pet-card">
+          <h2><%= pet.name %></h2>
+          <% if pet.photo.attached? %>
+            <%= link_to pet_path(pet) do %>
+              <%= cl_image_tag pet.photo.key, height: 270 %>
+            <% end %>
+          <% else %>
+            <div class="placeholder-image">No Photo Available</div>
+          <% end %>
+          <p><strong>Breed:</strong> <%= pet.breed %></p>
+          <p><strong>Age:</strong> <%= pet.age %> years</p>
+          <h2><%= pet.name %></h2>
+        </div>
       <% end %>
-  <% end %>
-  </div>
-</body>
+    </div>
+  </body>
 </html>
