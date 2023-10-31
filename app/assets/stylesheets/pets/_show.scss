@@ -1,60 +1,68 @@
-
-body{
-background-image: url('https://www.helpguide.org/wp-content/uploads/2023/02/Benefits-of-Pets.jpeg');
-background-size: cover;
+/* Reset some default styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 20px;
 }
 
-
-// .container {
-// display: flex;
-// align-items: center;
-// justify-content: flex-start;
-// height: 100vh;
-// }
-
-.card-container {
-background-color: rgba(157, 182, 157, 0.576);
-padding: 20px;
-max-width: 400px;
-margin: 0 20px;
-color:rgb(0, 0, 0);
-}
-
-.image {
-max-width: 90%;
-height: auto;
-
-}
-
-// .blurred-image {
-// filter: blur(5px);
-// }
-
-
-.card {
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background: #fff;
-  padding: 50px;
-  max-width: 500px;
-
-}
-
-.card h1 {
+h1 {
   font-size: 24px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
-.card-image {
+.user-profile-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.profile-photo {
+  max-width: 150px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.default-profile-photo {
+  background-color: #ddd;
+  color: #555;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  font-size: 24px;
+}
+
+.pet-photo img {
   max-width: 100%;
   height: auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
+  border-radius: 5px;
+  margin: 20px 0;
 }
 
-.card p {
+.user-profile-details {
+  margin: 20px 0;
+}
+
+.pet-details p {
+  font-size: 18px;
   margin: 10px 0;
-  font-size: 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #4CAF50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Style links */
+a {
+  color: #007BFF;
+  text-decoration: none;
 }
