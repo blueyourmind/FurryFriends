@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
 <body>
+<<<<<<< HEAD
 
   <div class="para-container">
      <p class='welcome-msg'>Get your family a new member.</p>
@@ -20,10 +20,13 @@
  <body>
 <div class="table-container">
 =======
+=======
+>>>>>>> 00f5201e9a0a93abe027854710238a44f3e81467
   <div class="table-container">
 >>>>>>> e7e43cacbdb0d6f8a8228744a1977570754b4cc3
   <% @pets.each do |pet| %>
     <div class="pet-card">
+<<<<<<< HEAD
       <h2><%= pet.name %></h2>
       <%= link_to pet_path(pet) do %>
         <%= cl_image_tag pet.photo.key, height: 270 %>
@@ -37,10 +40,22 @@
 
 =======
 
+=======
+     <h2><%= pet.name %></h2>
+<% if pet.photo.attached? %>
+  <%= link_to pet_path(pet) do %>
+    <%= cl_image_tag pet.photo.key, height: 270 %>
+  <% end %>
+<% else %>
+  <div class="placeholder-image">No Photo Available</div>
+<% end %>
+<p><strong>Breed:</strong> <%= pet.breed %></p>
+<p><strong>Age:</strong> <%= pet.age %> years</p>
+>>>>>>> 00f5201e9a0a93abe027854710238a44f3e81467
       <% if user_signed_in? %>
-        <%= link_to "Adopt me !", pet_path(pet), class: "adopt-button" %>
+        <%= link_to "Adopt", pets_path(pet), class: "adopt-button" %>
       <% else %>
-        <%= link_to "Login", new_user_session_path, class: "adopt-button" %>
+        <%= link_to "Adopt", new_user_session_path, class: "adopt-button" %>
       <% end %>
   <% end %>
   </div>

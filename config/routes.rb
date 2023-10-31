@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :pets
   root "pages#home"
   put '/pets/:id/adopt', to: 'pets#adopt', as: :adopt_pet
+resources :users, only: [:show]
+
 end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
