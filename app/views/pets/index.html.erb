@@ -3,7 +3,9 @@
     <div class="pet-card">
       <h2><%= pet.name %></h2>
       <%= link_to pet_path(pet) do %>
+      <% if pet.photo.attached?%>
         <%= cl_image_tag pet.photo.key, height: 270 %>
+        <%end%>
       <% end %>
       <p><strong>Breed:</strong> <%= pet.breed %></p>
       <p><strong>Age:</strong> <%= pet.age %> years</p>

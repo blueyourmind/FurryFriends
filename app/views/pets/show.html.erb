@@ -13,17 +13,13 @@
       <% if @user.present? && @user.profile_photo.attached? %>
         <%= cl_image_tag @user.profile_photo.key, class: "profile-photo" %>
       <% else %>
-<<<<<<< HEAD
 
-=======
-       
->>>>>>> master
         <div class="default-profile-photo">No Profile Photo Available</div>
       <% end %>
     </div>
   </div>
 
-<<<<<<< HEAD
+
 
     <%# <% if @pet.status == 'available' %>
 
@@ -36,10 +32,7 @@
 <div class="container">
     <%= link_to 'Back', pets_path, class: 'btn-primary'%>
     <%= link_to 'Delete', pet_path(@pet), 'data-turbo-method': :delete, data: { confirm: 'Are you sure you want to delete this pet?' }, class: 'btn-primary' %>
-<<<<<<< HEAD
-=======
     <%= link_to 'Adopt me',adopt_pet_path, class: 'btn-primary' %>
-=======
   <div class="user-profile-details">
     <% if @user.present? %>
       <h1><%= @user.first_name %> <%= @user.last_name %>'s Profile</h1>
@@ -48,8 +41,7 @@
     <% else %>
       <p>Available for adoption</p>
     <% end %>
->>>>>>> 00f5201e9a0a93abe027854710238a44f3e81467
->>>>>>> master
+
   </div>
 
   <% if @pet.photo.attached? %>
