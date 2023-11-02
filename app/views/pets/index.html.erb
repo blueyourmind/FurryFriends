@@ -1,14 +1,29 @@
-<div class="table-container">
-  <% @pets.each do |pet| %>
-    <div class="pet-card">
-      <h2><%= pet.name %></h2>
-      <%= link_to pet_path(pet) do %>
-      <% if pet.photo.attached?%>
-        <%= cl_image_tag pet.photo.key, height: 270 %>
-        <%end%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+   <div class="table-container">
+      <% @pets.each do |pet| %>
+        <div class="pet-card">
+          <h2><%= pet.name %></h2>
+          <% if pet.photo.attached? %>
+            <%= link_to pet_path(pet) do %>
+              <%= cl_image_tag pet.photo.key, height: 140 %>
+            <% end %>
+          <% else %>
+            <div class="placeholder-image">No Photo Available</div>
+          <% end %>
+          <p>Breed: <%= pet.breed %></p>
+          <p>Age:<%= pet.age %> years</p>
+        </div>
       <% end %>
-      <p><strong>Breed:</strong> <%= pet.breed %></p>
-      <p><strong>Age:</strong> <%= pet.age %> years</p>
     </div>
-  <% end %>
-</div>
+  </body>
+</html>

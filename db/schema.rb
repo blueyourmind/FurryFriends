@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_29_181722) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_01_185422) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,13 +42,14 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_29_181722) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "adoptions", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "pet_id", null: false
+  create_table "pet_adoptions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pet_id"], name: "index_adoptions_on_pet_id"
-    t.index ["user_id"], name: "index_adoptions_on_user_id"
+    t.bigint "user_id"
+    t.text "reason_for_adoption"
+    t.string "your_name"
+    t.text "email"
+    t.index ["user_id"], name: "index_pet_adoptions_on_user_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -63,8 +64,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_29_181722) do
     t.datetime "updated_at", null: false
     t.string "photo"
     t.string "user_name"
-    t.string "email"
     t.bigint "user_id", default: 1, null: false
+    t.bigint "adopter_id"
+    t.index ["adopter_id"], name: "index_pets_on_adopter_id"
     t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
@@ -86,14 +88,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_29_181722) do
     t.string "first_name"
     t.string "last_name"
     t.string "profile_photo_public_id"
+    t.string "remember_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "adoptions", "pets"
-  add_foreign_key "adoptions", "users"
+  add_foreign_key "pet_adoptions", "users"
   add_foreign_key "pets", "users"
+  add_foreign_key "pets", "users", column: "adopter_id"
   add_foreign_key "profiles", "users"
 end
