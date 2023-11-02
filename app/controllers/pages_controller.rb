@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   def home
-@pets = Pet.all
+    @pets = Pet.all
   end
-
 end

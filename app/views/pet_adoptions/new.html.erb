@@ -1,1 +1,18 @@
+<!-- app/views/pet_adoptions/new.html.erb -->
+<div class ="container">
+  <div class="header-form-container"></div>
+    <h1 class ="mt-4">You have chosen to adopt <%= @pet.name %></h1>
 
+
+<%= simple_form_for @adoption do |form| %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field :pet_id, value: @pet.id %>
+
+
+    <%= form.input :reason_for_adoption, as: :text, input_html: { rows: 4 } %>
+    <%= form.input :your_name, label: "Name" %>
+    <%= form.input :email, label: "Email" %>
+    <%= form.button :submit, "Submit", class: "btn-primary" %>
+
+  <% end %>
+</div>
