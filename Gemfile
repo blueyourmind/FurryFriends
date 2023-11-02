@@ -29,6 +29,7 @@ gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
+gem 'bcrypt', '~> 3.1.12'
 
 gem "sassc-rails"
 gem "dotenv-rails"

@@ -1,30 +1,30 @@
-class UsersController < ApplicationController
-  before_action :authenticate_user!
+# class UsersController < ApplicationController
+#   before_action :authenticate_user!
 
-  def edit
-    @user = current_user
-  end
+#   def edit
+#     @user = current_user
+#   end
 
-  def update
-    @user = current_user
+#   def update
+#     @user = current_user
 
-    if @user.update(user_params)
-      # Attach the user's profile photo to the @user
-      @user.profile_photo.attach(params[:user][:profile_photo])
+#     if @user.update(user_params)
 
-      redirect_to @user, notice: 'Profile was successfully updated.'
-    else
-      render :edit
-    end
-  end
+#       @user.profile_photo.attach(params[:user][:profile_photo])
 
-  def show
-    @user = User.find(params[:id])
-  end
+#       redirect_to @user, notice: 'Profile was successfully updated.'
+#     else
+#       render :edit
+#     end
+#   end
 
-  private
+#   def show
+#     @user = User.find(params[:id])
+#   end
 
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :profile_photo)
-  end
-end
+#   private
+
+#   def user_params
+#     params.require(:user).permit(:first_name, :last_name, :email, :profile_photo)
+#   end
+# end
