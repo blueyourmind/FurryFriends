@@ -8,7 +8,7 @@ class ChangePetAdoptionsTable < ActiveRecord::Migration[6.0]
       t.remove :reason_for_adoption
 
 
-      t.references :pet, foreign_key: true, index: true
+     
     end
   end
 end
