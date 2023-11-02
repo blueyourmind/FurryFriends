@@ -15,7 +15,7 @@
               <strong >Age:</strong> <%= adoption.pet.age %> years<br>
               <!-- <strong >Story:</strong> <%= adoption.pet.story %> -->
             </p>
-            <%= link_to 'Delete', user_adoptions_path(adoption.id), data: { "turbo-method": :delete, confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+            <%= link_to 'Delete', user_adoption_path(adoption), data: { turbo_method: :delete, confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
           </div>
         </div>
       </div>
