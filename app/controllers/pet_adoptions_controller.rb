@@ -9,9 +9,9 @@ class PetAdoptionsController < ApplicationController
     else
        @adoption = PetAdoption.new
     end
-   end
+  end
 
-   def create
+  def create
     @adoption = PetAdoption.new(adoption_params)
     @pet = Pet.find_by(id: params[:pet_adoption][:pet_id])
     if @pet.nil?
@@ -26,9 +26,9 @@ class PetAdoptionsController < ApplicationController
          render 'new'
        end
     end
-   end
+  end
 
-   def destroy
+  def destroy
     @adoption = PetAdoption.find(params[:id])
 
     if @adoption.destroy
@@ -45,7 +45,7 @@ class PetAdoptionsController < ApplicationController
     redirect_to root_path # Redirect to the root page or another appropriate page
   end
 
-   def adoption_params
+  def adoption_params
     params.require(:pet_adoption).permit(:user_id, :your_name, :email, :reason_for_adoption, :pet_id)
-   end
+  end
 end
