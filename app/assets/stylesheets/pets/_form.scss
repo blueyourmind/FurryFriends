@@ -1,29 +1,41 @@
-.centered-form {
-  width: 27%;
-  padding: 14px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 23px 0;
-  font-size: 18px;
-  color: #f0e9e9;
-  left      : 50%;
-  top       : 63%;
-  position  : absolute;
-  transform : translate(-50%, -50%);
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.centered-form {
+  width: 45%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #f0e9e9;
+}
 
 .centered-form h2 {
   font-size: 24px;
-  color: #ffffff;
+  color: #333;
   margin-bottom: 20px;
 }
 
 .centered-form .form-field {
-  margin-bottom: 10px;
-  text-align: left;
-
+  margin-bottom: 20px;
 }
 
 .centered-form label {
@@ -44,6 +56,7 @@
 
 .centered-form .form-actions {
   margin-top: 20px;
+  text-align: right;
 }
 
 .btn-primary {
@@ -53,4 +66,15 @@
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.image-container {
+  width: 45%;
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
 }

@@ -26,6 +26,7 @@ h1 {
   text-align: center;
   font-size: 180px;
   margin: 20px 0;
+  color: #777;
 }
 
 
@@ -87,7 +88,7 @@ h1 {
   font-family: 'Miltonian Tattoo', serif;
   font-family: 'Shadows Into Light', cursive;
   font-size: 77px;
-  color: rgb(255, 255, 255);
+  color: rgb(50, 45, 45);
   position: absolute;
   top: 720px;
   left: 50%;
@@ -102,5 +103,8 @@ p{
 }
 h2{
   font-size:77px;
-  color:antiquewhite;
+  color:rgba(125, 152, 170, 0.782);
+}
+.navbar{
+  color:white;
 }

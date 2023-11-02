@@ -9,5 +9,4 @@ Rails.application.routes.draw do
   get 'adopted_pets', to: 'pets#adopted_pets', as: 'adopted_pets'
   get 'user_adoptions', to: 'user_adoptions#index', as: 'user_adoptions'
   get 'pets/:id/confirmation', to: 'pets#confirmation', as: 'confirmation_pet'
-
 end

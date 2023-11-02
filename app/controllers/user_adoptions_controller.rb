@@ -5,4 +5,5 @@ class UserAdoptionsController < ApplicationController
     @user = current_user
     @adoptions = @user.pet_adoptions
   end
+  
 end

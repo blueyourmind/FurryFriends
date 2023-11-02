@@ -9,27 +9,29 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
+  <header class="navbar">
+    <h2>Welcome to our Pet Adoption Center</h2>
+  </header>
 
-    <div class="para-container">
-      <%# <h1 class='welcome-msg'>Get your family a new member.</h1> %>
-
-    </div>
-
+  <div class="content">
     <div class="table-container">
       <% @pets.each do |pet| %>
         <div class="pet-card">
           <h2><%= pet.name %></h2>
-          <% if pet.photo.attached? %>
-            <%= link_to pet_path(pet) do %>
-              <%= cl_image_tag pet.photo.key, height: 140 %>
+          <div class="pet-image">
+            <% if pet.photo.attached? %>
+              <%= link_to pet_path(pet) do %>
+                <%= cl_image_tag pet.photo.key, height: 140 %>
+              <% end %>
+            <% else %>
+              <div class="placeholder-image">No Photo Available</div>
             <% end %>
-          <% else %>
-            <div class="placeholder-image">No Photo Available</div>
-          <% end %>
-          <p>Breed: <%= pet.breed %></p>
-          <p>Age:<%= pet.age %> years</p>
+          </div>
+          <p class="pet-info">Breed: <%= pet.breed %></p>
+          <p class="pet-info">Age: <%= pet.age %> years</p>
         </div>
       <% end %>
     </div>
-  </body>
+  </div>
+</body>
 </html>
