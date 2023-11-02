@@ -5,4 +5,9 @@ class UserAdoptionsController < ApplicationController
     @user = current_user
     @adoptions = @user.pet_adoptions
   end
+
+  def destroy
+    @adoption = PetAdoption.find(params[:id])
+    @adoption.destroy
+  end
 end
