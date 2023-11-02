@@ -1,0 +1,30 @@
+.profile-container {
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-photo {
+  flex: 1;
+  padding: 20px;
+}
+
+.profile-details {
+  flex: 2;
+  padding: 20px;
+  color: black;
+}
+
+.profile-details h1 {
+  font-size: 24px;
+}
+
+.label {
+  color: black;
+  font-weight: bold;
+}
+
+.detail {
+  color: black;
+}

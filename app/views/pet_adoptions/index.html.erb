@@ -1,21 +1,12 @@
-<div class="thank-you-container">
-    <h1 class="thank-you-heading">Thank You for Adopting a Pet</h1>
-    <p class="thank-you-message">
-      We appreciate your decision to give a loving home to a pet in need.
-      You've made a positive impact on a furry friend's life!
-    </p>
-    <a href="<%= root_path %>" class="back-to-home-link">Back to Home</a>
-  </div>
-
-<h2>Adopted Pets</h2>
+<!-- app/views/pet_adoptions/index.html.erb -->
+<h2>Your Adoption Requests:</h2>
 <ul>
-  <% @pet_adoptions.each do |pet_adoption| %>
+  <% current_user.pet_adoptions.each do |adoption| %>
     <li>
-      <% if pet_adoption.pet.present? %>
-        <%= pet_adoption.pet.name %>
-      <% else %>
-        Pet information not available
-      <% end %>
+      <%= adoption.pet.name %>
+      <%= link_to 'Delete', adoption, method: :delete, data: { confirm: 'Are you sure you want to delete this request?' }, class: 'btn btn-danger' %>
     </li>
   <% end %>
 </ul>
+
+<!-- Add any other content specific to this page as needed -->

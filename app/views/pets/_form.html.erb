@@ -4,8 +4,9 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+  <h2>Thank you for choosing to help a pet find a home!</h2>
   <div class="centered-form">
-    <h2>Add a Pet</h2>
+
     <%= form_for @pet, url: pets_path, html: { multipart: true, data: { turbo: false } } do |f| %>
 
 
@@ -61,7 +62,7 @@
       </div>
 
       <div class="form-actions">
-        <%= f.submit "Add Pet", class: "btn-primary" %>
+        <%= f.submit "Submit", class: "btn-primary" %>
 
       </div>
     <% end %>

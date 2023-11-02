@@ -6,7 +6,7 @@ class PetsController < ApplicationController
     @pets = Pet.all
   end
 
- 
+
 
   def new
     @pet = Pet.new
@@ -16,7 +16,7 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     if @pet.save
 
-      redirect_to @pet, notice: 'Pet for adoption was successfully created.'
+      redirect_to confirmation_pet_path(@pet)
     else
 
       render :new
@@ -41,7 +41,6 @@ class PetsController < ApplicationController
   end
 
   def adopt
-
     @pet_adoption = PetAdoption.new(pet_adoption_params)
 
     @pet_adoption.pet = Pet.find(params[:id])
@@ -55,6 +54,14 @@ class PetsController < ApplicationController
     end
   end
 
+  def show
+    @pet = Pet.find(params[:id])
+  end
+
+  # app/controllers/pets_controller.rb
+  def confirmation
+    @pet = Pet.find(params[:id])
+  end
 
   def donate
     if @pet.status == 'adopted'
@@ -82,5 +89,5 @@ class PetsController < ApplicationController
 
   def pet_adoption_params
     params.require(:pet).permit(:your_name, :email, :reason_for_adoption)
-   end
+  end
 end

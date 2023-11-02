@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_01_185422) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_02_111940) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,6 +49,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_01_185422) do
     t.text "reason_for_adoption"
     t.string "your_name"
     t.text "email"
+    t.bigint "pet_id"
     t.index ["user_id"], name: "index_pet_adoptions_on_user_id"
   end
 
