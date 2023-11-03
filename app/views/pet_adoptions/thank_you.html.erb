@@ -1,5 +1,18 @@
-
-<!-- app/views/pet_adoptions/thank_you.html.erb -->
-<h1>Thank You for Your Adoption Request</h1>
-<p>Your adoption request has been submitted successfully. We appreciate your interest in adopting a pet!</p>
-<%= link_to "Return to Homepage", root_path, class: "btn-primary" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="thank-you-container">
+    <h1 class="thank-you-heading">Thank You for Your Adoption Request</h1>
+    <p class="thank-you-message">
+      Your adoption request has been submitted successfully. We appreciate your interest in adopting a pet!
+    </p>
+    <a href="<%= root_path %>" class="back-to-home-link btn-primary">Return to Homepage</a>
+  </div>
+</body>
+</html>

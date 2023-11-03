@@ -3,39 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <style>
+    .pet-name {
+      color: #FF0000;
+    }
+
+    .label {
+      color: #00FF00;
+    }
+
+    .detail {
+      color: #0000FF;
+    }
+
+    .placeholder-image {
+      border-radius: 10px;
+    }
+
+    .btn {
+
+    }
+  </style>
   <title>Pet Profile</title>
 </head>
 <body>
   <div class="profile-container">
     <div class="profile-photo">
-    <!-- <div class="user-profile-card">
-      <div class="user-profile-photo">
-        <% if @user.present? && @user.profile_photo.attached? %>
-          <%= cl_image_tag @user.profile_photo.key, class: "profile-photo" %>
-        <% else %>
-          <div class="default-profile-photo">No Profile Photo Available</div>
-        <% end %>
-      </div> -->
+      <% if @pet.photo.attached? %>
+        <%= image_tag @pet.photo, height: 270, style: "border-radius: 10px;" %>
+      <% else %>
+        <div class="placeholder-image">No Pet Photo Available</div>
+      <% end %>
+    </div>
 
-<% if @pet.photo.attached? %>
-  <%= cl_image_tag @pet.photo.key, height: 270, style: "border-radius: 10px;" %>
-<% else %>
-  <div class="placeholder-image" style="border-radius: 10px;">No Pet Photo Available</div>
-<% end %>
-</div>
+    <div class="profile-details">
+      <h1 class="pet-name">Hi, I'm <%= @pet.name %></h1>
+      <p><span class="label">Species:</span> <span class="detail"><%= @pet.species %></span></p>
+      <p><span class="label">Breed:</span> <span class="detail"><%= @pet.breed %></span></p>
+      <p><span class="label">Age:</span> <span class="detail"><%= @pet.age %> years</span></p>
+      <p><span class="label">Story:</span> <span class="detail"><%= @pet.story %></span></p>
+      <%= link_to 'Adopt Me', new_pet_adoption_path(pet_id: @pet.id), class: 'btn btn-primary' %>
+      <%= link_to 'Delete', pet_path(@pet), data: { turbo_method: :delete, confirm: 'Are you sure?' }, class: 'btn btn-danger btn-delete' %>
 
-<div class="profile-details">
-  <h1>Hi, I'm <%= @pet.name %></h1>
-  <p><span class="label">Species:</span> <span class="detail"><%= @pet.species %></span></p>
-  <p><span class="label">Breed:</span> <span class="detail"><%= @pet.breed %></span></p>
-  <p><span class="label">Age:</span> <span class="detail"><%= @pet.age %> years</span></p>
-  <p><span class="label">Story:</span> <span class="detail"><%= @pet.story %></span></p>
-  <%= link_to 'Adopt Me', new_pet_adoption_path(pet_id: @pet.id), class: 'btn btn-primary' %>
-  <!-- <%#= link_to 'Manage Your Adoption Requests', manage_adoptions_path, class: 'btn btn-primary' %> -->
-</div>
   </div>
 </body>
 </html>

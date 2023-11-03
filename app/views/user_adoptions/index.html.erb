@@ -1,24 +1,20 @@
-<!-- app/views/user_adoptions/index.html.erb -->
-<!-- app/views/user_adoptions/index.html.erb -->
-<div class="container">
+<%# <div class="container"> %>
   <div class="row">
     <% @adoptions.each do |adoption| %>
       <div class="col-md-4">
-        <div class="card">
-          <%= image_tag url_for(adoption.pet.photo), class: 'card-img-top' %>
+        <div class="card adoption-card">
+          <%= image_tag url_for(adoption.pet.photo), class: 'card-image' %>
           <div class="card-body">
             <h5 class="card-title text-center"><%= adoption.pet.name %></h5>
             <p class="card-text pet-details text-black">
-
-              <strong >Species:</strong> <%= adoption.pet.species %><br>
-              <strong > Breed:</strong> <%= adoption.pet.breed %><br>
-              <strong >Age:</strong> <%= adoption.pet.age %> years<br>
-              <!-- <strong >Story:</strong> <%= adoption.pet.story %> -->
+              <strong>Species:</strong> <%= adoption.pet.species %><br>
+              <strong>Breed:</strong> <%= adoption.pet.breed %><br>
+              <strong>Age:</strong> <%= adoption.pet.age %> years<br>
             </p>
-            <%= link_to 'Delete', user_adoption_path(adoption), data: { turbo_method: :delete, confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+            <%= link_to 'Delete', user_adoption_path(adoption), data: { turbo_method: :delete, confirm: 'Are you sure?' }, class: 'btn btn-danger btn-delete' %>
           </div>
         </div>
       </div>
     <% end %>
-  </div>
+  <%# </div> %>
 </div>
