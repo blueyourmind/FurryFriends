@@ -6,5 +6,4 @@ class Pet < ApplicationRecord
   has_one :profile
   validates :name, :species, :breed, :age, :story, :found_when, :status, presence: true
   validates :status, inclusion: { in: ['available', 'adopted'] }
-
 end

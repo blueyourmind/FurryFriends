@@ -1,56 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.centered-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('https://wallpaperset.com/w/full/d/6/c/289442.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
+  padding: 0;
+}
+
 .centered-form {
-  width: 27%;
-  padding: 14px;
-  border: 1px solid #ccc;
+  width: 32%;
+  padding: 30px;
+  border: 2px solid #b7bec3;
   border-radius: 5px;
-  margin: 23px 0;
-  font-size: 18px;
-  color: #f0e9e9;
-  left      : 50%;
-  top       : 63%;
-  position  : absolute;
-  transform : translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.442);
+  background-color: rgba(247, 247, 247, 0.252);
+  text-align: center;
+  font-size: larger;
 
-}
+  h2 {
+    font-size: 41px;
+    color: rgba(3, 27, 1, 0.755);
+    margin-bottom: 10px;
+  }
 
+  .form-field {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
 
-.centered-form h2 {
-  font-size: 24px;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
+    label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
 
-.centered-form .form-field {
-  margin-bottom: 10px;
-  text-align: left;
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    input[type="date"],
+    input[type="file"] {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  }
 
-}
+  .form-actions {
+    margin-top: 10px;
+    text-align: right;
 
-.centered-form label {
-  font-weight: bold;
-  display: block;
-}
-
-.centered-form input[type="text"],
-.centered-form input[type="number"],
-.centered-form textarea,
-.centered-form input[type="date"],
-.centered-form input[type="file"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.centered-form .form-actions {
-  margin-top: 20px;
-}
-
-.btn-primary {
-  background-color: green;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+    .btn-primary {
+      background-color: green;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
 }

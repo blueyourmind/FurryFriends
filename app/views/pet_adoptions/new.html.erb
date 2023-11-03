@@ -1,18 +1,58 @@
-<!-- app/views/pet_adoptions/new.html.erb -->
-<div class ="container">
-  <div class="header-form-container"></div>
-    <h3 class ="mt-4">You have chosen to adopt <%= @pet.name %></h3>
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .adoption-form-container {
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 20px;
+      margin: 20px;
+      border: 2px solid #b7bec3;
+      border-radius: 5px;
+      text-align: center;
+      width: 41%;
+      font-size: 18px;
+      display: inline-block;
+      vertical-align: top;
+    }
 
+    .content-container {
+      display: inline-block;
+      width: 20%;
+      vertical-align: top;
+    }
+    h1{
+      font-size:141px;
+      color:rgba(255, 255, 255, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="adoption-form-container">
+    <h3 class="adoption-form-header">You have chosen to adopt <%= @pet.name %></h3>
 
-<%= simple_form_for @adoption do |form| %>
-  <%= form.hidden_field :user_id, value: current_user.id %>
-  <%= form.hidden_field :pet_id, value: @pet.id %>
+    <%= simple_form_for @adoption do |form| %>
+      <%= form.hidden_field :user_id, value: current_user.id %>
+      <%= form.hidden_field :pet_id, value: @pet.id %>
 
+      <div class="form-group">
+        <%= form.label :reason_for_adoption, class: 'form-label' %>
+        <%= form.text_area :reason_for_adoption, class: 'form-control', rows: 4 %>
+      </div>
+      <div class="form-group">
+        <%= form.label :your_name, "Name", class: 'form-label' %>
+        <%= form.text_field :your_name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= form.label :email, class: 'form-label' %>
+        <%= form.email_field :email, class: 'form-control' %>
+      </div>
+      <%= form.submit "Submit", class: "btn btn-primary form-submit" %>
+    </div>
 
-    <%= form.input :reason_for_adoption, as: :text, input_html: { rows: 4 } %>
-    <%= form.input :your_name, label: "Name" %>
-    <%= form.input :email, label: "Email" %>
-    <%= form.button :submit, "Submit", class: "btn-primary" %>
-
-  <% end %>
-</div>
+    <div class="content-container">
+      <h1>"Where Hearts Find Homes"</h1>
+    </div>
+  </div>
+</body>
+<%end%>
+</html>

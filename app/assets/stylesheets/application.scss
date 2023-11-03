@@ -18,4 +18,26 @@
 @import "pets/pet_adoptions";
 @import "pets/thank_you";
 @import "pets/pet_profile";
-@import "pets/adopted_pets.scss"
+@import "pets/adopted_pets";
+@import "pets/signup";
+
+@media (max-width: 960px) {
+
+  .container {
+    width: 700px;
+  }
+}
+
+@media (max-width: 720px) {
+
+  .container {
+    width: 500px;
+  }
+}
+
+@media (max-width: 540px) {
+  
+  .container {
+    width: 300px;
+  }
+}
