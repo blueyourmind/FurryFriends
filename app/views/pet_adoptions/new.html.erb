@@ -1,32 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    .adoption-form-container {
-      background-color: rgba(255, 255, 255, 0.5);
-      padding: 20px;
-      margin: 20px;
-      border: 2px solid #b7bec3;
-      border-radius: 5px;
-      text-align: center;
-      width: 41%;
-      font-size: 18px;
-      display: inline-block;
-      vertical-align: top;
-    }
 
-    .content-container {
-      display: inline-block;
-      width: 20%;
-      vertical-align: top;
-    }
-    h1{
-      font-size:141px;
-      color:rgba(255, 255, 255, 0.5);
-    }
-  </style>
-</head>
-<body>
   <div class="adoption-form-container">
     <h3 class="adoption-form-header">You have chosen to adopt <%= @pet.name %></h3>
 
@@ -35,24 +7,22 @@
       <%= form.hidden_field :pet_id, value: @pet.id %>
 
       <div class="form-group">
-        <%= form.label :reason_for_adoption, class: 'form-label' %>
-        <%= form.text_area :reason_for_adoption, class: 'form-control', rows: 4 %>
-      </div>
-      <div class="form-group">
-        <%= form.label :your_name, "Name", class: 'form-label' %>
+        <%= form.label :your_name, "Name:", class: 'form-label' %>
         <%= form.text_field :your_name, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= form.label :email, class: 'form-label' %>
+        <%= form.label :reason_for_adoption, "Reason for adoption:" ,class: 'form-label' %>
+        <%= form.text_area :reason_for_adoption, class: 'form-control', rows: 4 %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :email, "Email:", class: 'form-label' %>
         <%= form.email_field :email, class: 'form-control' %>
       </div>
       <%= form.submit "Submit", class: "btn btn-primary form-submit" %>
     </div>
-
+    <%end%>
     <div class="content-container">
       <h1>"Where Hearts Find Homes"</h1>
     </div>
   </div>
-</body>
-<%end%>
-</html>
