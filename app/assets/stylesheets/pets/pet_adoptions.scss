@@ -79,7 +79,7 @@
 }
 
 .card.adoption-card .card-image {
-  border-radius: 50%; 
+  border-radius: 50%;
   overflow: hidden;
   width: 150px;
   height: 150px;
@@ -109,4 +109,46 @@
   font-size: 16px;
   margin-top: 20px;
   color: #555;
+}
+
+.adoption-form-container {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  margin: 20px;
+  border: 2px solid #b7bec3;
+  border-radius: 5px;
+  text-align: center;
+  width: 41%;
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.adoption-form-container .form-group {
+  text-align: left; /* Align form elements to the left */
+}
+
+.adoption-form-container .form-label {
+  text-align: left; /* Align labels to the left */
+  font-weight: bold;
+}
+
+.adoption-form-container .form-control {
+  text-align: left; /* Align input elements to the left */
+  margin-top: 2px;
+}
+
+.content-container {
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+}
+
+h1{
+  font-size:141px;
+  color:rgba(255, 255, 255, 0.5);
+}
+
+h3{
+  font-weight: bolder;
 }
