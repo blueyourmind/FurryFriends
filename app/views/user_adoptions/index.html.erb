@@ -1,7 +1,7 @@
 <%# <div class="container"> %>
   <div class="row">
     <% @adoptions.each do |adoption| %>
-      <div class="col-md-4">
+      <div class="adopt-card-container">
         <div class="card adoption-card">
           <%= image_tag url_for(adoption.pet.photo), class: 'card-image' %>
           <div class="card-body">
