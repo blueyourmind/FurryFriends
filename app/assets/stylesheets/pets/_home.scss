@@ -7,7 +7,7 @@
 
 
 body {
-  background-image: url('https://wallpaperswide.com/download/cat_paws_3-wallpaper-1920x1080.jpg');
+  background-image: url('https://www.helpguide.org/wp-content/uploads/2023/02/Benefits-of-Pets.jpeg');
   font-family: Arial, sans-serif;
   color: #333;
   margin: 0;
@@ -22,12 +22,7 @@ body {
 
 
 
-h1 {
-  text-align: center;
-  font-size: 180px;
-  margin: 20px 0;
-  color: #777;
-}
+
 
 
 .welcome-msg {
@@ -43,6 +38,14 @@ h1 {
   justify-content: center;
   gap: 20px;
   padding: 20px;
+
+
+  h1 {
+    text-align: center;
+    font-size: 80px;
+    margin: 20px 0;
+    color: rgba(55, 48, 48,9);
+  }
 }
 
 
@@ -56,7 +59,7 @@ h1 {
   padding: 20px;
   width: 300px;
   text-align: center;
-  color: #282626;
+  color: rgba(42, 105, 121, 0.906) !important;
 }
 
 
@@ -64,6 +67,7 @@ h1 {
 .pet-card h2 {
   font-size: 68px;
   margin: 10px 0;
+  color: #ffffff;
 }
 
 
@@ -107,4 +111,7 @@ h2{
 }
 .navbar{
   color:white;
+}
+.para-container{
+text-align: center;
 }
