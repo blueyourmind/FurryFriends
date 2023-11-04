@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :pet_adoptions, only: [:new, :create, :show, :destroy]
   resources :users
-  resources :pets  
+  resources :pets
   resources :user_adoptions, only: [:index, :destroy]
 
   get 'thank_you', to: 'pet_adoptions#thank_you', as: 'thank_you'
