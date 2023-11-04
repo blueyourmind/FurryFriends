@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "pets#index"
+  root to: "pets#index"
   devise_for :users
   resources :pet_adoptions, only: [:new, :create, :show, :destroy]
   resources :users
